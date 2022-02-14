@@ -141,7 +141,6 @@ select {
 
 .flow>*:where(:not(:first-child)) {
     margin-top: var(--flow-mt, 1rem);
-    outline: 1px solid red;
 }
 
 .container {
@@ -341,9 +340,55 @@ select {
 
 .underline-indicator>.active,
 .underline-indicator>[ aria-selected="true"] {
+    color: hsl(var(--clr-white) / 1);
     border-color: hsl(var(--clr-white) / 1);
 }
 
 .tab-list {
     --gap: 2rem;
+}
+
+.dot-indicator>* {
+    cursor: pointer;
+    border: 0;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    padding: .5em;
+    background-color: hsl(var(--clr-white) / .25);
+}
+
+.dot-indicator>*:hover,
+.dot-indicator>*:focus {
+    background-color: hsl(var(--clr-white) / .5);
+}
+
+.dot-indicator>.active,
+.dot-indicator>[ aria-selected="true"] {
+    background-color: hsl(var(--clr-white) / 1);
+}
+
+.number {
+    flex-direction: column;
+}
+
+.number-indicator>* {
+    margin-bottom: .4rem;
+    cursor: pointer;
+    border: .1rem solid hsl(var(--clr-white) / .25);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    place-items: center;
+    background-color: hsl( var(--clr-dark));
+}
+
+.number-indicator>.active,
+.number-indicator>[ aria-selected="true"] {
+    background-color: hsl(var(--clr-white) / 1);
+    color: hsl( var(--clr-dark));
+}
+
+.number-indicator>*:hover,
+.number-indicator>*:focus {
+    border-color: hsl(var(--clr-white) / 1);
 }
